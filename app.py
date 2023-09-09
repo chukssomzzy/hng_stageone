@@ -5,8 +5,6 @@
 from datetime import date, datetime
 from os import getenv
 from flask import Flask, abort, request
-from dotenv import load_dotenv
-assert (load_dotenv())
 
 app = Flask(__name__)
 
