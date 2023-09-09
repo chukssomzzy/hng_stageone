@@ -10,7 +10,7 @@ assert (load_dotenv())
 
 app = Flask(__name__)
 
-time = "%Y-%m-%dT%H:%M:%S.%f"
+time = "%Y-%m-%dT%H:%M:%SZ"
 
 
 @app.route("/api", strict_slashes=False)
@@ -30,7 +30,7 @@ def get_about():
     res_out["status_code"] = 200
     res_out["github_repo_url"] = "https://github.com/chukssomzzy/hng_stageone"
     res_out["github_file_url"] = \
-        "https://github.com/chukssomzzy/hnb_stageone/blob/main/app.py"
+        "https://github.com/chukssomzzy/hnb_stageone/blob/master/app.py"
     return res_out
 
 
