@@ -10,6 +10,8 @@ assert (load_dotenv())
 
 app = Flask(__name__)
 
+time = "%Y-%m-%dT%H:%M:%S.%f"
+
 
 @app.route("/api", strict_slashes=False)
 def get_about():
@@ -24,7 +26,7 @@ def get_about():
     res_out["slack_name"] = slack_name
     res_out["track"] = track
     res_out["current_day"] = d.strftime("%A")
-    res_out["utc_time"] = str(datetime.utcnow())
+    res_out["utc_time"] = datetime.strftime(datetime.utcnow(), time)
     res_out["status_code"] = 200
     res_out["github_repo_url"] = "https://github.com/chukssomzzy/hng_stageone"
     res_out["github_file_url"] = \
